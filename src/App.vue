@@ -1,7 +1,14 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, reactive } from 'vue'
 
-const titulo = ref('Título')
+const titulo = ref('Título');
+const produto = reactive ({
+  nome: 'Produto',
+  preco: 19.99,
+  quantidade: 10,
+  categorias: []
+})
+
 </script>
 
 <template>
@@ -13,6 +20,10 @@ const titulo = ref('Título')
     </div>
     <div class="resultado">
       <h2>Resultado</h2>
+      <p>Nome: {{ produto.nome }}</p>
+      <p>Preço: {{ produto.preco }}</p>
+      <p>Quantidade: {{ produto.quantidade }}</p>
+      <p>Categorias: {{ produto.categorias }}</p>
     </div>
   </div>
 </template>
